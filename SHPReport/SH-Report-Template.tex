@@ -1,0 +1,236 @@
+%   This is a template for a senoir honours project report.
+\documentclass[a4paper,12pt]{article}
+\usepackage{fullpage}
+\usepackage[pdftex]{graphicx}
+
+%
+%                       This section generates a title page
+%                       Edit only the sections indicated to put
+%                       in the project title, your name, supervisor,
+%                       project length in weeks and submission date
+%
+\begin{document}
+\pagestyle{empty}                       % No numbers on title page      
+
+\par\noindent\includegraphics[width=12cm]{PandA_crest.pdf}
+
+\par\noindent                                           % Centre Title, and name
+\vspace*{2cm}
+\begin{center}
+        \Large\bf \Large\bf Senior Honours Project\\
+        \LARGE\bf Template for Writing a Report         % Replace with your title
+\end{center}
+\vspace*{0.5cm}
+\begin{center}
+        \bf Your Name\\                               % Repace with your name and
+        October 2021                                   % Submission Date
+\end{center}
+\vspace*{5mm}
+%
+%                       Insert your abstract HERE                
+\begin{abstract}
+        The abstract is a short, concise explanation of the project
+        covering the aims, outlines of techniques used and a short
+        summary of the results. It should contain enough information to
+        make the aims and success of the project clear, but contain no details.
+        A typical abstract should be between 50 and 100 words.
+\end{abstract}
+
+\vspace*{1cm}
+
+\subsubsection*{Declaration}
+
+\begin{quotation}
+  I declare that this project and report is my own work.
+\end{quotation}
+
+\vspace*{2cm}
+Signature:\hspace*{8cm}Date:  31/10/2021         % You can include a scanned version 
+                                                 % of you siganture here, or comment 
+                                                 % this line out
+
+\vfill
+{\bf Supervisor:} Dr. A.N. Other                 % Change to suit
+\hfill
+10 Weeks                                         % Change to suit
+\newpage
+%
+%                       End of Title Page
+\pagestyle{plain}                               % Page numbers at bottom
+\setcounter{page}{1}                            % Set page number to 1
+\tableofcontents                                % Makes Table of Contents
+\section{Introduction}
+
+The introduction section of the report should start by setting out the
+motivation of the project, the aims, and an outline of techniques used.
+It should also incorporate the literature review. This section should 
+cover the theory of the material in the project in sufficient detail to 
+make the following work understandable to the average physicist. What has 
+been done before in this area, what different techniques have been 
+employed? It should not contain large sections of standard
+bookwork, but should contain references to this material. It should also 
+contain references to similar work in the same field to put your work in 
+the correct context.
+
+The structure of the report is flexible, and will depend on the details
+of the project being undertaken. For example, you might want to have a 
+separate overall introduction section, and then a more specific background section 
+on a method or approach. It should only contain relevant information. For example, 
+a life history of the inventor of the technique to be used is
+totally irrelevant\footnote{I have seen a report that contained three pages
+on the life of Gabor, and it was not very interesting.}. Here use common sense
+and the general rule, ``If in doubt: leave it out'', however
+include information that you judge would be useful to one of your
+peers if they were to repeat the project.
+
+An introduction often ends with a sentence or two which summarises the main
+results which are to come, setting the scene of the rest of the report. 
+
+
+
+
+\section{Methods}
+
+This section should contain the details of the method employed. 
+As in the previous sections, standard techniques should not be written
+out in detail. For example, if you use an oscilloscope to take a
+measurement, the theory of the CRO tube\footnote{Don't laugh, I have actually
+seen this.} is {\bf not relevant}. In computational projects this
+section should be used to explain the algorithms used or details of any specific 
+software. Long detailed sections of theory, data tables
+and details of computational code used in data analysis only should not
+appear in this section, but may be included in the appendices if relevant. You can
+include unnumbered equations
+\[
+\frac{dy}{dx}=2x-y^2
+\]
+as well as numbered equations
+\begin{equation} \label{myfirstequation}
+\mathbf{\nabla}\times\mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
+\end{equation}
+which can then be referred to later [as in Eq.~(\ref{myfirstequation})].
+
+This section should emphasise the philosophy of the approach used
+and detail novel techniques. However
+please note: this section in {\bf not} a blow-by-blow account of what
+you did throughout the project, and in particular it should {\bf not} 
+contain large detailed sections about things you tried and found to be
+completely wrong. Remember you are writing a technical report, and
+not a diary. If however you find that a technique that was expected to
+work failed, that is a valid result and should be included. You should 
+also try to be clear where you are using a standard technique/piece of 
+software, and where you have developed a new method or new code specifically 
+for the project.
+
+Here logical structure is particularly important, and you may find that
+to maintain good structure you may have to present the experiments
+in a different order from the one in which you carried them out.
+
+Note that if the project consists of a series of short experiments
+each of which requires a different theory and method, it may be appropriate
+to have one {\bf Theory, Method, Results} section for each
+experiment.
+
+
+\section{Results \& Discussion}
+
+This section should detail the obtained results in a clear,
+easy-to-follow manner. Remember long tables of numbers are just as boring to
+read as they are to write. Use graphs to present your results wherever 
+practicable. Plots should be numbered and referred to in the text. 
+The distribution of angles for the $L=100$ case are plotted in Figure 8.
+When quoting results or measurements do not forget about units and errors. 
+Remember there are two basic types of errors, random and systematic, 
+which you must consider. Remember also the difference between an error 
+and a mistake, computer program bugs are mistakes.
+ 
+%
+%                       Here is how to inserted a centered
+%                       pdf file
+%
+\begin{figure}[htb]     %Insert a figure as soon as possible
+        \begin{center}
+        \includegraphics[width=7cm]{example_plot.pdf}
+        	\end{center}
+	\caption{This is an inserted figure from a pdf file. It is not a particularly good example, in that the numbers are small and difficult to read, axes labels are too small or missing and do not have units, and there are multiple lines which are not explained. A caption should be provided for each figure which explains what the elements of the plot are (lines, points, errorbars). If multiple lines or sets of points are shown a legend can also be provided. Multiple related plots can be combined as sub-panels.}
+\end{figure}
+
+Again be selective in what you include. Half a dozen
+tables that contain totally wrong data you collected while you forgot
+to switch on the power supply are {\bf not relevant} and will frequently
+mask the correct results. It may be more appropriate to show one or two 
+plots with examples of ``typical'' behaviour, rather than many plots which 
+look identical.
+
+This section also contains a discussion of the results. This should
+include a discussion of the experimental and/or numerical errors, and a
+comparison with the predictions of the background and theory underlying
+the techniques used. It should highlight particular strengths
+and/or weaknesses of the methods used.
+
+ 
+\section{Conclusion}
+
+Again, the report structure is flexible, and you might want to have separate
+results, discussion and conclusion sections, or you might want to combine
+the discussion with either the results or the conclusions. In any case, the 
+conclusions section should summarise the results obtained, detail
+conclusions reached, suggest future work, and and changes that you would make 
+if you repeated the experiment. 
+If you have opted to have multiple {\bf Theory, Method, Results}
+sections, draw all the results together in a {\bf single} conclusion.
+
+\section{References}
+
+Don't forget to include a \textbf{references} section. Detail the relevant 
+references which should be cited at the correct place in the text of the 
+report. Citations can be done in passing, for example at the end of a 
+sentence~\cite{mel1991}. Or can be explicit (for further details see 
+Ref.~\cite{sindhikara2008}). There are no fixed rules as to how many 
+references are needed. 
+When you cite a reference you must give sufficient information, e.g., for a journal article give, {\it Author}, {\it Title of
+article},
+{\it Journal Name}, {\it Volume}, {\it Page}, and {\it Year}, 
+while for a book give, {\it Author}, {\it Title},
+{\it (Editor if there is one)}, {\it Publisher}, and {\it Year}.  
+Being consistent is more important that the specific reference format
+you use.
+
+\begingroup
+\renewcommand{\section}[2]{}  % supresses a further references title 
+
+\begin{thebibliography}{10}
+\bibitem{mel1991}
+V.~I. Mel'nikov. ``The Kramers problem: Fifty years of development''.
+\textit{Physics Reports} \textbf{209}, 1 (1991).
+
+\bibitem{sindhikara2008}
+D.~Sindhikara, Y.~Meng, and A.~E. Roitberg.
+``Exchange frequency in replica exchange molecular dynamics''.
+\textit{J. Chem. Phys.} \textbf{128}, 01B609 (2008).
+
+\bibitem{russo2009}
+J.~Russo, P.~Tartaglia, and F.~Sciortino.
+``Reversible gels of patchy particles: role of the valence''.
+\textit{J. Chem. Phys.} \textbf{131}, 014504 (2009).
+\end{thebibliography}
+
+\endgroup
+
+% Now include appendices
+
+\appendix
+\section{Appendices}
+
+Material that is useful background to the report, but is not essential,
+or whose inclusion within the report  would detract from its
+structure and readability, should be included in appendices. Typical
+material could be diagrams of electronic circuits built, specialist
+data tables used to analyse results, details of computer programs
+written for analysis and display of results. Again be selective. The appendix is {\bf not} an excuse for you to add every
+last detail and piece of data, but should be used to assist the reader
+of the report by supplying additional material. Many reports will not require
+appendices, and if the report is complete without the additional
+material leave it out.
+
+\end{document}
