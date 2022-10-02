@@ -1,0 +1,47 @@
+# PART A - ENERGY MINIMIZATION
+# 1) Initialization
+# 2) System definition
+# 3) Simulation settings
+# 4) Visualization
+# 5) Run
+
+# 1) Initialization
+units lj # use system of lj for all quantities that are unitless
+dimension 2  # indicates we are making a 2D simulation
+atom_style atomic #atom style, atoms are dots with mass in atomic style
+pair_style lj/cut 2.5 #interact with a lenard jones potential with a cut off at 2.5 units
+boundary p p p #periodic boundaries across all three dimensions
+
+# 2) System definition
+region myreg block -30 30 -30 30 -0.5 0.5 #creates rectangular region from the ranges x,y,z
+create_box 2 myreg #creates a box based on the dimensions of the region
+create_atoms 1 random 1500 341341 myreg #creates 1500 atoms of type 1
+create_atoms 2 random 100 127569 myreg #creates 100 atoms of type 2
+
+# 3) Simulation settings
+mass 1 1 #attribute mass of 1 'lj' to atom 1
+mass 2 1 #attribute mass of 1 'lj' to atom 2
+pair_coeff 1 1 1.0 1.0 #sets lenard jones coefficients for particles 1 and 2 respectively
+pair_coeff 2 2 0.5 0.3
+
+# 4) Visualization
+thermo 10 #print thermodynamic information every 10 timesteps
+
+# 5) Run
+minimize 1.0e-4 1.0e-6 1000 10000 #preform an energy minimisation of the system
+
+# PART B - MOLECULAR DYNAMICS
+# 4) Visualization
+thermo 1000 #overrules previous thermo command
+variable kinetic_energy equal ke 
+variable potential_energy equal pe
+variable pressure equal press
+fix myat1 all ave/time 10 1 10 v_kinetic_energy v_potential_energy v_pressure file energy.dat #puts thermal energy data in a file called "energy.dat"
+dump mydmp all atom 1000 dump.lammpstrj 
+
+# 5) Run
+fix mynve all nve
+fix mylgv all langevin 1.0 1.0 0.1 1530917
+fix myefn all enforce2d
+timestep 0.005
+run 10000
